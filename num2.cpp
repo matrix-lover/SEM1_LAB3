@@ -1,4 +1,4 @@
-//exercise num 2
+//exercise num 1
 
 #include <algorithm>
 #include <iostream>
@@ -23,8 +23,8 @@ vector<T> generate_random_vector(size_t num, T min = -100, T max = 100)
 
 
 int main() {
-    vector<float> v = generate_random_vector<float>(10, -100, 50);
-    int b = int (v.size()); // количество элементов
+    vector<float> v = generate_random_vector<float>(10, -100, 100);
+    float b = float (v.size()); // количество элементов
     
     for (int i = 0; i < b; ++i){ // выведем значения элементов массива
         cout << i+1 << ": " << v[i] << endl;
@@ -41,7 +41,7 @@ int main() {
     // 2. Сумма квадратов всех элементов массива
         float sum_sqr = 0;
         for (int i = 0; i < b; ++i) {
-            sum_sqr += v[i]*v[i];  
+            sum_sqr += v[i]*v[i];
             
         }
     cout << "Сумма квадратов всех элементов массива: " << sum_sqr << endl;
@@ -92,4 +92,3 @@ int main() {
         cout << "Cреднее арифметическое элементов массива с s1-го по s2-й: " << sec_arif_k1_k2_ << endl;
     return 0;
 }
-
