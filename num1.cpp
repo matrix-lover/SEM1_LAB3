@@ -23,7 +23,7 @@ vector<T> generate_random_vector(size_t num, T min = -100, T max = 100)
 
 int main() {
     vector<float> v = generate_random_vector<float>(10, -100, 100);
-    int b = int (v.size()); // количество элементов
+    float b = float (v.size()); // количество элементов
     
     cout << "Начальные значения" << endl;
         for (int i = 0; i < b; ++i){ // выведем значения элементов массива
