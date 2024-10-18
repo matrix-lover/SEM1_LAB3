@@ -1,15 +1,35 @@
 //exercise num 2
 
+#include <algorithm>
 #include <iostream>
-#include <vector>
 #include <random>
+#include <vector>
 
 using namespace std;
 
+template<class T>
+vector<T> generate_random_vector(size_t num, T min = -100, T max = 100)
+{
+        random_device rd;
+        mt19937 e2(rd());
+        uniform_real_distribution<> dist(-100, 100);
+
+        auto lambda = [&e2, &dist] () -> T { return dist(e2); };
+
+        vector<T> result(10);
+        generate_n(result.begin(), num, lambda);
+        return result;
+}
+
+
 int main() {
-    vector<float> v{10, -30, 56, -24, 98, 67, 14, -75, 47, 100};
-    int b = int(v.size()); // количество элементов массива
+    vector<float> v = generate_random_vector<float>(10, -100, 50);
+    int b = int (v.size()); // количество элементов
     
+    for (int i = 0; i < b; ++i){ // выведем значения элементов массива
+        cout << i+1 << ": " << v[i] << endl;
+    }
+        
     // 1. Сумма всех элементов массива
         float sum = 0;
         for (int i = 0; i < b; ++i) {
@@ -21,7 +41,7 @@ int main() {
     // 2. Сумма квадратов всех элементов массива
         float sum_sqr = 0;
         for (int i = 0; i < b; ++i) {
-            sum_sqr += v[i]*v[i];
+            sum_sqr += v[i]*v[i];  
             
         }
     cout << "Сумма квадратов всех элементов массива: " << sum_sqr << endl;
@@ -72,3 +92,4 @@ int main() {
         cout << "Cреднее арифметическое элементов массива с s1-го по s2-й: " << sec_arif_k1_k2_ << endl;
     return 0;
 }
+
