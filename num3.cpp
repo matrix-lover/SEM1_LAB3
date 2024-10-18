@@ -23,7 +23,7 @@ vector<T> generate_random_vector(size_t num, T min = -100, T max = 100)
 
 
 int main() {
-    vector<int> v = generate_random_vector<int>(20, -100, 50);
+    vector<int> v = generate_random_vector<int>(10, -100, 100);
     int b = int (v.size()); // количество элементов
     int a = 3;
     int mass1[a];
