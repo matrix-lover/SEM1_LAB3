@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    string verb;
+    string verb = "insert into a text";
     string verb_part = "";
     int m;
     int n;
@@ -14,8 +14,8 @@ int main() {
     cin >> m;
     cin >> n;
     cout << '\n';
-    verb_part.insert(0, verb, m+1, n-m+1);
+    verb_part.insert(0, verb, m-1, n-m+1);
     
-    cout << verb_part << endl; // количество букв
+    cout << verb_part << endl;
     return 0;
 }
