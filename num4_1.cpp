@@ -1,4 +1,4 @@
-//exercise num 4 // не завершен
+//exercise num 4
 
 #include <algorithm>
 #include <iostream>
@@ -16,14 +16,14 @@ vector<T> generate_random_vector(size_t num, T min = -100, T max = 100)
 
         auto lambda = [&e2, &dist] () -> T { return dist(e2); };
 
-        vector<T> result(10);
+        vector<T> result(20);
         generate_n(result.begin(), num, lambda);
         return result;
 }
 
 
 int main() {
-    vector<int> v = generate_random_vector<int>(10, -100, 100);
+    vector<int> v = generate_random_vector<int>(20, -100, 100);
     int b = int (v.size()); // количество элементов
     
     cout << "Начальные значения" << endl;
@@ -32,10 +32,10 @@ int main() {
     }
     cout << '\n';
     
-    // 1. первый отрицательный элемент (если отрицательные элементы в массиве есть)
+    // 1. удалить первый отрицательный элемент (если отрицательные элементы в массиве есть)
     int count1 = 0;
     float dig;
-    for (int i = b-1; i > -1; --i){
+    for (int i = 0; i < b; ++i){
         if (v[i] < 0){
             dig = i;
             count1 = 1;
@@ -43,7 +43,7 @@ int main() {
         }
     }
     if (count1== 1){
-        cout << "удаленный первый отрицательный элемент" << v[dig] << endl;
+        cout << "удаленный первый отрицательный элемент: " << v[dig] << endl;
         
         
     }
@@ -58,7 +58,7 @@ int main() {
             break;
         }
     }
-    if (count2 == 1){cout << "удаленный последний четный элемент" << v[digit] << endl;}
+    if (count2 == 1){cout << "удаленный последний четный элемент: " << v[digit] << endl;}
     
     return 0;
 }
