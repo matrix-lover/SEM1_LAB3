@@ -15,7 +15,8 @@ int main() {
     while (city[i] != 0){
         i += 1;         //аналогично .size
     }
-    cout << i << endl; // количество букв
+    if (i % 2 == 0){cout << "Четное количество букв"<< endl;}
+    else {cout << "Нечетное количество букв" <<endl;}
     
     return 0;
 }
