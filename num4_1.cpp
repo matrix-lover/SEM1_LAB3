@@ -42,17 +42,18 @@ int main() {
             break;
         }
     }
-    if (count1== 1){
+    if (count1 == 1){
         cout << "удаленный первый отрицательный элемент: " << v[dig] << endl;
         for (int i = dig; i < b-1; ++i){
             v[i] = v[i+1];
-            v.pop_back();
         }
+        v.pop_back();
         cout << "Получившийся массив" << endl;
         for (int i = 0; i < b-1; ++i){ // выведем значения элементов массива
-            cout << i+1 << ": " << v[i] << endl;
+            if (i != dig){cout << i+1 << ": " << v[i] << endl;}
         }
 
-    }  
+    }
     return 0;
 }
+
