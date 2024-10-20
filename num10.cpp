@@ -8,7 +8,6 @@ using namespace std;
 int main() {
     string verb;
     cin >> verb;
-    int utf = 1;
     float coun = 0; //счетчик
     cout << '\n';
     
