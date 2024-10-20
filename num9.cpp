@@ -8,8 +8,8 @@ int main() {
     string verb;
     cin >> verb;
     int utf = 1;
-    string condi;
     cout << "Слово на русском языке?(да|нет)" << endl;
+    string condi;
     cin >> condi;
     if (condi != "нет"){utf = 2;}
     string star = "*";
@@ -26,9 +26,9 @@ int main() {
     for (int i = 0; i < count; ++i){
         stars.insert(i, star);
     }
-    count = count * 1.5;
+    
     verb.insert(0, stars);
-    verb.insert(count*2, stars);
+    verb.append(stars);
     
     cout << verb << endl;
     return 0;
