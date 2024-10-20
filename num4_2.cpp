@@ -32,26 +32,27 @@ int main() {
     }
     cout << '\n';
     
-    // 2. удалить последний четный элемент (если четные элементы в массиве есть)
-    int count2 = 0; //счетчик отрицательных чисел
-    float digit;
-    for (int i = b-1; i > -1; --i){
-        if (v[i] % 2 == 0){
-            count2 = 1;
-            digit = i;
+    // 1. удалить первый отрицательный элемент (если отрицательные элементы в массиве есть)
+    int count1 = 0;
+    float dig;
+    for (int i = 0; i < b; ++i){
+        if (v[i] < 0){
+            dig = i;
+            count1 = 1;
             break;
         }
     }
-    if (count2 == 1){cout << "удаленный последний четный элемент: " << v[digit] << endl;
-        for (int i = digit; i < b-1; ++i){
+    if (count1 == 1){
+        cout << "удаленный первый отрицательный элемент: " << v[dig] << endl;
+        for (int i = dig; i < b-1; ++i){
             v[i] = v[i+1];
-            v.pop_back();
-            cout << "Получившийся массив: " << endl;
         }
+        v.pop_back();
         cout << "Получившийся массив" << endl;
         for (int i = 0; i < b-1; ++i){ // выведем значения элементов массива
-            cout << i+1 << ": " << v[i] << endl;
+            if (i != dig){cout << i+1 << ": " << v[i] << endl;}
         }
+
     }
     return 0;
 }
