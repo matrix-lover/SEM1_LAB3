@@ -19,15 +19,20 @@ int main() {
     }
     
     while(sentence.find("Can ") != string::npos){
-        
-        sentence.replace(sentence.find("Can "), 3, newWord);
+        unsigned long start = sentence.find("Can ");
+        sentence.erase(start, 3);
+        sentence.insert(start, newWord);
     }
     while(sentence.find(" can ") != string::npos){
-        sentence.replace(sentence.find("can "), 3, newWord);
+        unsigned long start = sentence.find(" can ") + 1;
+        sentence.erase(start, 3);
+        sentence.insert(start, newWord);
     }
     
     while(sentence.find("can?") != string::npos){
-        sentence.replace(sentence.find("can?"), 3, newWord);
+        unsigned long start = sentence.find("can?");
+        sentence.erase(start, 3);
+        sentence.insert(start, newWord);
     }
     cout << sentence << endl;
     return 0;
