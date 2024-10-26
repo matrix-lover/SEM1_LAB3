@@ -50,7 +50,7 @@ int main() {
         v.pop_back();
         cout << "Получившийся массив" << endl;
         for (int i = 0; i < b-1; ++i){ // выведем значения элементов массива
-            if (i != dig){cout << i+1 << ": " << v[i] << endl;}
+            {cout << i+1 << ": " << v[i] << endl;}
         }
 
     }
